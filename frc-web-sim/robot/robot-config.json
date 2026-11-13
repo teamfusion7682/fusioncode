@@ -1,0 +1,21 @@
+{
+  "robotName": "Ornek-Tank-50kg",
+  "drivetrain": {
+    "motor": "NEO",
+    "motorsPerSide": 2,
+    "gearing": 10.71,
+    "massKg": 50.0,
+    "momentOfInertiaKgM2": 7.5,
+    "wheelRadiusMeters": 0.0762,
+    "trackWidthMeters": 0.6
+  },
+  "wiring": {
+    "left":  { "pwm": [0], "reversed": false },
+    "right": { "pwm": [1], "reversed": true }
+  },
+  "encoders": [
+    { "a": 0, "b": 1, "side": "left",  "countsPerRev": 2048 },
+    { "a": 2, "b": 3, "side": "right", "countsPerRev": 2048 }
+  ],
+  "gyro": { "channel": 0 }
+}
