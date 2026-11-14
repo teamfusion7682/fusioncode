@@ -1,0 +1,11 @@
+{
+  "title": "Command-Based örnek: komut zinciri ve zaman aşımı",
+  "scenarios": [
+    { "id": "rota", "label": "1 Rota (komut zinciri)", "mode": "autonomous", "duration": 7,
+      "chooser": { "Otonom": "1 - Rota (komut zinciri)" } },
+    { "id": "zaman-asimi", "label": "2 Zaman aşımı (withTimeout)", "mode": "autonomous", "duration": 5,
+      "chooser": { "Otonom": "2 - Zaman asimli (withTimeout)" } },
+    { "id": "teleop", "label": "3 Teleop (varsayılan komut)", "mode": "teleop", "duration": 5,
+      "joystick": [ {"t":0,"axes":[0,-0.7,0,0,0,0]}, {"t":2,"axes":[0,0,0,0,0.5,0]}, {"t":3,"axes":[0,0,0,0,0,0]} ] }
+  ]
+}

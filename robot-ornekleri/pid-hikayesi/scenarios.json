@@ -1,0 +1,13 @@
+{
+  "title": "PID ayarının hikâyesi: zayıf kod, kötü PID, ayarlı PID ve rota",
+  "scenarios": [
+    { "id": "zayif", "label": "1 Zayıf kod", "mode": "autonomous", "duration": 6,
+      "chooser": { "Otonom": "1 - Zayif kod (geri bildirimsiz)" } },
+    { "id": "kotu-pid", "label": "2 Kötü PID (kP çok yüksek)", "mode": "autonomous", "duration": 6,
+      "chooser": { "Otonom": "2 - Kotu PID (kP cok yuksek)" } },
+    { "id": "ayarli-pid", "label": "3 Ayarlı PID", "mode": "autonomous", "duration": 6,
+      "chooser": { "Otonom": "3 - Ayarli PID" } },
+    { "id": "rota", "label": "4 Rota: 2 m, 90° dön, 1 m", "mode": "autonomous", "duration": 6,
+      "chooser": { "Otonom": "4 - Rota: 2 m ileri, 90 derece don, 1 m ileri" } }
+  ]
+}

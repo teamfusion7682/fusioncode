@@ -1,0 +1,39 @@
+FUSION CODE - FRC WEB SIMULATOR
+================================
+
+NASIL BASLARIM? (3 ADIM)
+  1) Java (JDK 17-23) kurulu olmali. Yoksa: https://adoptium.net  ->  Temurin 21
+  2) Baslat:
+       Windows : BASLAT.bat dosyasina cift tikla
+       macOS   : Baslat.command dosyasina cift tikla
+       Linux   : ./baslat.sh
+  3) Tarayici kendiliginden acilir (http://127.0.0.1:8080).
+     Sol tarafta Java kodunu yaz, "Canli" kutusu acikken yazmayi biraktiginda
+     kod kendiliginden calisir; sagda robot sahada hareket eder, altta grafik cikar.
+
+NE YAPABILIRIM?
+  - Hazir ornekte "Zayif kod" ile "PID"i yan yana karsilastir.
+  - robot-ornekleri klasorunde iki hazir proje var:
+      pid-hikayesi  : 4 otonom (zayif, kotu PID, ayarli PID, rota)
+      command-tabanli : Command-Based robot, komut zinciri ve zaman cizelgesi
+  - '⚙ Robot' sekmesinden robotunu formla kur (kutle, motor, disli...).
+  - Ust sagdaki TR | EN dugmesiyle dili degistir.
+  - Gelismis menusunden mod/sure sec, projeni indir/yukle.
+
+SORUN GIDERME
+  - "Java bulunamadi": JDK kur (yalnizca JRE yetmez, javac gerekir).
+  - JDK 24 veya uzeri ise sunucu acilmaz: JDK 21 kullan.
+  - Port dolu: BASLAT.bat 8081   (veya ./baslat.sh 8081)
+  - Bu sunucuyu internete acma; yalnizca kendi bilgisayarinda kullan.
+
+DURUST NOT
+  Fizik modeli ayarlanabilir bir ORNEK robottur; gercek robotla olcum yapilip
+  kalibre edilmeden "birebir ayni" denmemelidir. Ayrintilar: README.md
+
+------------------------------------------------------------------
+QUICK START (EN)
+  1) Install a JDK (17-23): https://adoptium.net (Temurin 21).
+  2) Windows: double-click BASLAT.bat | macOS: Baslat.command | Linux: ./baslat.sh
+  3) Your browser opens at http://127.0.0.1:8080. Type Java on the left; with
+     "Live" ticked it runs when you stop typing. Switch language with TR | EN.
+  Note: the physics model is an uncalibrated example robot, not a real measurement.

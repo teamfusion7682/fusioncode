@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="frcsim-mode" content="dev">
+  <title>Fusion Code</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <div class="brand">
+      <img class="logo" src="logo.png" alt="" width="34" height="34">
+      <h1>Fusion Code</h1>
+      <span class="tag" id="tag" data-i18n="tag"></span>
+    </div>
+    <div class="controls">
+      <span id="choosers" class="choosers dev-only"></span>
+      <label class="static-only"><span data-i18n="scenario"></span>
+        <select id="scenario"></select>
+      </label>
+      <label class="live dev-only" data-i18n-title="live_title"><input type="checkbox" id="live"> <span data-i18n="live"></span></label>
+      <button id="run" class="primary" data-i18n-title="run_title"><span id="run-label" data-i18n="run"></span></button>
+      <button id="btn-all" class="ghost static-only" data-i18n="compare" data-i18n-title="compare_title"></button>
+      <details class="adv dev-only">
+        <summary data-i18n="adv"></summary>
+        <div class="adv-body">
+          <label><span data-i18n="mode"></span>
+            <select id="mode">
+              <option value="autonomous" data-i18n="mode_auto"></option>
+              <option value="teleop" data-i18n="mode_teleop"></option>
+            </select>
+          </label>
+          <label><span data-i18n="duration"></span>
+            <input id="duration" type="number" min="1" max="60" value="6"> s
+          </label>
+          <div class="adv-row">
+            <button id="btn-example" class="ghost" data-i18n="example" data-i18n-title="example_title"></button>
+            <button id="btn-save" class="ghost" data-i18n="save" data-i18n-title="save_title"></button>
+            <button id="btn-load" class="ghost" data-i18n="load" data-i18n-title="load_title"></button>
+          </div>
+          <input id="file-load" type="file" accept=".json,application/json" hidden>
+        </div>
+      </details>
+      <button id="lang" class="ghost lang" type="button" aria-label="Language / Dil">
+        <span data-lang="tr">TR</span><span class="sep">|</span><span data-lang="en">EN</span>
+      </button>
+    </div>
+  </header>
+
+  <ol class="steps static-only" aria-label="How to use">
+    <li data-i18n="step1"></li>
+    <li data-i18n="step2"></li>
+    <li data-i18n="step3"></li>
+  </ol>
+
+  <main>
+    <section class="pane editor-pane" data-i18n-aria="editor_aria">
+      <details id="static-note" class="note static-only">
+        <summary data-i18n="note_summary"></summary>
+        <div id="static-note-body"></div>
+      </details>
+      <div class="tabs" id="tabs" role="tablist"></div>
+      <div id="configurator" class="configurator" hidden></div>
+      <div class="editor-wrap">
+        <div class="gutter" id="gutter" aria-hidden="true"></div>
+        <div class="code">
+          <pre id="hl" aria-hidden="true"></pre>
+          <textarea id="code" spellcheck="false" wrap="off" autocapitalize="off" autocomplete="off" data-i18n-aria="code_aria"></textarea>
+        </div>
+      </div>
+      <div class="teleop-box" id="teleop-box" hidden>
+        <label for="joystick"><span data-i18n="joy_label"></span> <small data-i18n="joy_hint"></small></label>
+        <textarea id="joystick" spellcheck="false" rows="3"></textarea>
+      </div>
+      <div class="console-head">
+        <span id="status" role="status" aria-live="polite"></span>
+        <button id="btn-clear" class="ghost small" data-i18n="clear"></button>
+      </div>
+      <pre id="console" class="console" data-i18n-aria="console_aria"></pre>
+    </section>
+
+    <section class="pane sim-pane" data-i18n-aria="sim_aria">
+      <div class="canvas-box field-box">
+        <canvas id="field" data-i18n-aria="field_aria"></canvas>
+        <div class="empty" id="empty" data-i18n="empty"></div>
+      </div>
+
+      <div class="playback">
+        <button id="restart" class="ghost" data-i18n-aria="restart_aria" type="button">⟲</button>
+        <button id="play" class="ghost" data-i18n-aria="play_aria">▶</button>
+        <input id="seek" type="range" min="0" max="1000" value="0" data-i18n-aria="seek_aria">
+        <span id="time" class="mono">0.00 / 0.00 s</span>
+        <select id="speed" data-i18n-aria="speed_aria">
+          <option value="0.25">0.25×</option>
+          <option value="0.5">0.5×</option>
+          <option value="1" selected>1×</option>
+          <option value="2">2×</option>
+          <option value="4">4×</option>
+        </select>
+      </div>
+
+      <div id="readout" class="readout" aria-live="off"></div>
+
+      <div class="chart-head">
+        <label><span data-i18n="graph"></span> <select id="chart-key"></select></label>
+        <div id="runs" class="runs" data-i18n-aria="runs_aria"></div>
+      </div>
+      <div class="canvas-box chart-box">
+        <canvas id="chart" data-i18n-aria="chart_aria"></canvas>
+      </div>
+      <div id="timeline-box" class="timeline-box" hidden>
+        <div class="tl-title" data-i18n="tl_title"></div>
+        <canvas id="timeline" data-i18n-aria="tl_aria"></canvas>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+  <script src="extras.js"></script>
+</body>
+</html>
